@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Msangi Jr Website Development - Elevate your business with modern, responsive, and custom-designed websites.">
+    <meta name="keywords" content="web development, Msangi Jr, responsive websites, custom design, SEO, e-commerce">
+    <meta name="author" content="Msangi Jr">
+    <title>Msangi Jr Website Development</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #f4b400;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: inline-block;
+            background: #f4b400;
+            color: #000;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #ffa800;
+            transform: scale(1.05);
+        }
+
+        /* Animated Image Section */
+        .image-slider {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .slider-images img {
+            width: 100%;
+            display: none;
+            animation: fadeSlide 1.5s ease-in-out forwards;
+        }
+
+        .slider-images img.active {
+            display: block;
+        }
+
+        @keyframes fadeSlide {
+            0% {
+                opacity: 0;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #f4b400;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .service-card {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #f4b400;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            color: #ddd;
+        }
+
+        footer a {
+            color: #f4b400;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ffa800;
+        }
+
+        /* Scroll to Top Button */
+        #scrollTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #f4b400;
+            color: #000;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: none;
+            transition: background 0.3s;
+        }
+
+        #scrollTop:hover {
+            background: #ffa800;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Msangi Jr Website Development</h1>
+        <p>Crafting Modern, Responsive, and Custom Websites to Elevate Your Business</p>
+        <button class="btn" onclick="showAlert()">Get Started</button>
+    </header>
+
+    <!-- Image Slider Section -->
+    <div class="image-slider">
+        <div class="slider-images">
+            <img src="https://via.placeholder.com/1200x600?text=Welcome+to+Msangi+Jr" alt="Welcome Image" class="active">
+            <img src="https://via.placeholder.com/1200x600?text=Custom+Websites" alt="Custom Websites">
+            <img src="https://via.placeholder.com/1200x600?text=Boost+Your+Business" alt="Boost Your Business">
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>Why Choose Us?</h2>
+        <p>
+            At Msangi Jr Website Development, we specialize in creating tailored solutions for businesses and individuals.
+            Our websites are fast, responsive, and user-friendly, ensuring a top-notch experience for your audience.
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="service-card">
+            <h3>Custom Web Design</h3>
+            <p>We create unique designs that match your brand identity and captivate your users.</p>
+        </div>
+        <div class="service-card">
+            <h3>E-Commerce Solutions</h3>
+            <p>Boost your sales with a fully functional and attractive online store.</p>
+        </div>
+        <div class="service-card">
+            <h3>SEO Optimization</h3>
+            <p>Enhance your visibility and attract more customers with optimized content.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Msangi Jr Website Development. All rights reserved. | <a href="mailto:info@msangijr.dev">Contact Us</a></p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div id="scrollTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // Show alert when "Get Started" button is clicked
+        function showAlert() {
+            alert("Thank you for choosing Msangi Jr Website Development! Let's build something amazing together.");
+        }
+
+        // Scroll to Top Functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.onscroll = function() {
+            if (window.scrollY > 200) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Image Slider Functionality
+        const images = document.querySelectorAll('.slider-images img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000);
+    </script>
+</body>
+</html>
