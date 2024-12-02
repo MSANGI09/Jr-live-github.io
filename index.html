@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Msangi Jr Link Verifier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .container {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      background: #2575fc;
+      border-radius: 50%;
+      position: relative;
+      margin: 0 auto 10px;
+      overflow: hidden;
+    }
+    .logo img {
+      width: 150%;
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #666;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #2575fc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #1b5ec7;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    .result.safe {
+      color: green;
+    }
+    .result.unsafe {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="msangijr_logo.png" alt="Msangi Jr Logo">
+    </div>
+    <h1>Msangi Jr Link Verifier</h1>
+    <p>A reliable tool to detect unsafe and malicious links. Verify links quickly and stay secure online.</p>
+    <input type="text" id="urlInput" placeholder="Paste the link here">
+    <button onclick="checkLink()">Verify Link</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function checkLink() {
+      const urlInput = document.getElementById("urlInput").value.trim();
+      const resultDiv = document.getElementById("result");
+
+      if (!urlInput) {
+        resultDiv.textContent = "Please enter a link.";
+        resultDiv.className = "result";
+        return;
+      }
+
+      // Basic Check 1: HTTPS Validation
+      if (!urlInput.startsWith("https://")) {
+        resultDiv.textContent = "Warning: This link does not use HTTPS!";
+        resultDiv.className = "result unsafe";
+        return;
+      }
+
+      // Basic Check 2: Suspicious Domain Names (Common Scam Indicators)
+      const suspiciousDomains = ["bit.ly", "shortlink", "adf.ly", "tinyurl"];
+      const isSuspicious = suspiciousDomains.some(domain => urlInput.includes(domain));
+
+      if (isSuspicious) {
+        resultDiv.textContent = "Warning: This link may be a shortened or suspicious link!";
+        resultDiv.className = "result unsafe";
+        return;
+      }
+
+      // Basic Check 3: Domain Name Syntax (does it look like a proper URL?)
+      const urlPattern = /^(https?:\/\/)?([a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5})/;
+      if (!urlPattern.test(urlInput)) {
+        resultDiv.textContent = "Invalid URL format detected!";
+        resultDiv.className = "result unsafe";
+        return;
+      }
+
+      // If all checks pass
+      resultDiv.textContent = "This link appears safe.";
+      resultDiv.className = "result safe";
+    }
+  </script>
+</body>
+</html>
